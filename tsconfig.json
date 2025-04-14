@@ -21,7 +21,6 @@
     "noImplicitAny": false,
     "noImplicitThis": false,
     "strictFunctionTypes": false,
-    "suppressImplicitAnyIndexErrors": true,
     "plugins": [
       {
         "name": "next"

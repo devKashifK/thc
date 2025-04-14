@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 
 export default function InteractionsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -230,10 +231,12 @@ export default function InteractionsSection() {
                       </div>
                       
                       <div className="relative">
-                        <img
+                        <Image
                           src="/dashboard-mockup.jpg"
                           alt="Smart Match Dashboard"
                           className="w-full rounded-lg shadow-inner object-cover"
+                          width={500}
+                          height={500}
                           onError={(e) => {
                             e.currentTarget.src = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
                           }}

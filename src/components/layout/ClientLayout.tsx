@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import ThemeProvider from '../theme/ThemeProvider';
 import Navbar from '../navigation/Navbar';
-import ThemeDebug from '../theme/ThemeDebug';
 
 export default function ClientLayout({
   children,
@@ -73,7 +72,6 @@ export default function ClientLayout({
           }
         `}</style>
         {children}
-        {/* <ThemeDebug /> */}
       </div>
     </ThemeProvider>
   );

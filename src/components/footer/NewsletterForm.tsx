@@ -66,6 +66,11 @@ export default function NewsletterForm() {
             )}
           </motion.button>
         </div>
+        
+        {/* Error message display */}
+        {errorMessage && (
+          <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
+        )}
       </form>
     </div>
   );

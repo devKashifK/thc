@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../theme/ThemeProvider';
-import Image from 'next/image';
 
 export default function HeroSection() {
   const { theme } = useTheme();
@@ -14,7 +13,7 @@ export default function HeroSection() {
   const slideTexts = ["Top Influencers", "Brand Growth", "Higher ROI"];
 
   useEffect(() => {
-    setIsDark(theme === 'dark');
+    setIsDark(theme === 'light');
   }, [theme]);
 
   useEffect(() => {
@@ -34,16 +33,16 @@ export default function HeroSection() {
       setCurrentSlide((prev) => (prev + 1) % slideTexts.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [slideTexts.length]);
+  }, []);
 
   return (
     <section 
       ref={containerRef}
-      className={`relative flex flex-col items-center justify-center overflow-hidden py-20 md:py-24 min-h-screen ${isDark ? 'bg-gray-900' : ''}`}
+      className="relative flex flex-col items-center justify-center overflow-hidden py-20 md:py-24 min-h-screen"
       style={{ position: 'relative', zIndex: 1 }}
     >
       {/* Modern gradient background */}
-      <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-black' : 'bg-gradient-to-b from-indigo-50 via-white to-blue-50'}`}></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-50 via-white to-blue-50"></div>
       
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -313,15 +312,13 @@ export default function HeroSection() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-transparent z-10"></div>
                     
                     {/* Main image with better hover effect */}
-                    <Image
-                      src="/dashboard-mockup.jpg"
-                      alt="Smart Match Dashboard"
+                    <img 
+                      src="/hero-image.jpg" 
+                      alt="Influencer collaboration" 
                       className="w-full h-full object-cover transition-all duration-700 hover:scale-105 hover:rotate-1"
                       onError={(e) => {
-                        e.currentTarget.src = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
+                        e.currentTarget.src = "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80";
                       }}
-                      width={500}
-                      height={500}
                     />
                     
                     {/* Image corner decorations */}

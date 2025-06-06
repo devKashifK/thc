@@ -606,7 +606,7 @@ export default function Home() {
                       className="px-8 py-4 rounded-full bg-white/20 backdrop-blur-xl border-2 border-white/30 text-white font-semibold hover:bg-white/30 transform transition-all hover:scale-105 focus:outline-none shadow-[0_4px_20px_rgba(255,255,255,0.2)]"
                     >
                       <span className="[text-shadow:_0_1px_2px_rgba(0,0,0,0.5)]">
-                        Explore Creators
+                        Hire A Creator
                       </span>
                     </button>
                   </motion.div>
